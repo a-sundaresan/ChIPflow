@@ -19,6 +19,7 @@ A modular, end-to-end ChIP-seq analysis pipeline built with **Nextflow DSL2**. D
 - [Pipeline Workflow](#pipeline-workflow)
 - [Requirements](#requirements)
 - [Installation](#installation)
+  - [Download Singularity Images](#download-singularity-images)
 - [Usage](#usage)
 - [Samplesheet Format](#samplesheet-format)
 - [Parameters](#parameters)
@@ -100,7 +101,19 @@ git clone https://github.com/a-sundaresan/ChIPflow.git
 cd ChIPflow
 ```
 
-No package installation is needed — all tools run inside Singularity containers defined in `nextflow.config`.
+### Download Singularity Images
+
+A helper script is provided to pull all required Singularity images in one step:
+
+```bash
+# Pull all images to ./singularity_images/ (default)
+bash pull_containers.sh
+
+# Or specify a custom directory
+bash pull_containers.sh /path/to/your/image/dir
+```
+
+Then update the container paths in `nextflow.config` to point to your image directory. Images are pulled from [quay.io/biocontainers](https://quay.io/organization/biocontainers) and require Singularity ≥ 3.0.
 
 ---
 
