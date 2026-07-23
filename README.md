@@ -1,6 +1,13 @@
 # ChIPflow
 
-# ChIP-seq Analysis Pipeline
+![Language](https://img.shields.io/badge/Language-Nextflow-41ab5d?style=flat-square)
+![DSL](https://img.shields.io/badge/DSL-DSL2-brightgreen?style=flat-square)
+![Containers](https://img.shields.io/badge/Containers-Singularity-blue?style=flat-square)
+![Genome](https://img.shields.io/badge/Genome-hg38%20%7C%20mm10-lightgrey?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+
+## ChIP-seq Analysis Pipeline
 
 A modular, end-to-end ChIP-seq analysis pipeline built with **Nextflow DSL2**. Designed for processing paired-end or single-end ChIP-seq data from raw FASTQ files through quality control, alignment, peak calling, annotation, and motif enrichment, culminating in a comprehensive MultiQC report.
 
@@ -18,6 +25,8 @@ A modular, end-to-end ChIP-seq analysis pipeline built with **Nextflow DSL2**. D
 - [Output Structure](#output-structure)
 - [Software & Containers](#software--containers)
 - [Reference Genome Setup](#reference-genome-setup)
+- [Related Projects](#related-projects)
+- [Author](#author)
 
 ---
 
@@ -36,7 +45,7 @@ This pipeline automates the complete ChIP-seq analysis workflow including:
 - Fingerprint plot (deepTools plotFingerprint)
 - Aggregated MultiQC report with custom QC sections
 
-Supports both **paired-end (PE)** and **single-end (SE)** libraries, and multiple ChIP targets with a matched input control per condition.
+Supports both **paired-end (PE)** and **single-end (SE)** libraries, and multiple ChIP targets with a matched input control per condition, containerised with Singularity for full reproducibility.
 
 ---
 
@@ -87,8 +96,8 @@ FASTQ (PE or SE)
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/chipseq-pipeline.git
-cd chipseq-pipeline
+git clone https://github.com/a-sundaresan/ChIPflow.git
+cd ChIPflow
 ```
 
 No package installation is needed — all tools run inside Singularity containers defined in `nextflow.config`.
@@ -280,3 +289,19 @@ cut -f1,2 /path/to/genome.fasta.fai > chrom.sizes
 - For MACS2 peak calling, PE samples use `BAMPE` format (actual insert sizes); SE samples use `BAM` format with fragment size estimation.
 - All input control replicates with the same sample name are pooled for peak calling.
 - HOMER annotation uses `-annStats` to produce per-category peak counts for the MultiQC custom section.
+
+---
+
+## Related Projects
+
+- [AutoAnnotSC](https://github.com/a-sundaresan/AutoAnnotSC) — Agentic scRNA-seq cell type annotation pipeline
+- [RShinyApps-scAdvisorAI](https://github.com/a-sundaresan/RShinyApps-scAdvisorAI) — AI-powered scRNA-seq QC advisor
+- [RShinyApps-BulkRNASeqDEAnalysis](https://github.com/a-sundaresan/RShinyApps-BulkRNASeqDEAnalysis) — Interactive bulk RNA-seq DE analysis
+
+---
+
+## Author
+
+**Aishwarya Sundaresan**
+[![Portfolio](https://img.shields.io/badge/Portfolio-a--sundaresan.github.io-black?style=flat-square)](https://a-sundaresan.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-aishwarya--sundaresan-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/aishwarya-sundaresan/)
