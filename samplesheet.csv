@@ -1,0 +1,7 @@
+sample,replicate,fastq_1,fastq_2,antibody,control
+Input_WT,REP1,Input_WT_REP1_R1.fastq.gz,Input_WT_REP1_R2.fastq.gz,,
+Input_WT,REP2,Input_WT_REP2_R1.fastq.gz,Input_WT_REP2_R2.fastq.gz,,
+H3K27ac_WT,REP1,H3K27ac_WT_REP1_R1.fastq.gz,H3K27ac_WT_REP1_R2.fastq.gz,H3K27ac,Input_WT
+H3K27ac_WT,REP2,H3K27ac_WT_REP2_R1.fastq.gz,H3K27ac_WT_REP2_R2.fastq.gz,H3K27ac,Input_WT
+CTCF_WT,REP1,CTCF_WT_REP1_R1.fastq.gz,CTCF_WT_REP1_R2.fastq.gz,CTCF,Input_WT
+CTCF_WT,REP2,CTCF_WT_REP2_R1.fastq.gz,CTCF_WT_REP2_R2.fastq.gz,CTCF,Input_WT
